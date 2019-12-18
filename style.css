@@ -40,7 +40,7 @@ input:hover , select:hover{
 
 select {
     width: 200px;
-    height: 35px;
+    height: 40px;
     border: #000 solid 2px;
     border-radius: 10px;
     outline: none;
