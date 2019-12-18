@@ -1,0 +1,76 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+}
+body {
+    /*background-color: rgb(1, 1, 15);*/
+    background-image: url('2.jpg');
+    background-repeat: no-repeat;
+    background-size: 100vw 100vh;
+    color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+fieldset {
+    border: 4px #fff solid;
+    width: 80vw;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+legend {
+    color: #fff;
+}
+
+input {
+    width: 200px;
+    height: 35px;
+    border: #000 solid 2px;
+    border-radius: 10px;
+    outline: none;
+    text-align-last:center;
+}
+
+input:hover , select:hover{
+    background-color: #555555;
+}
+
+select {
+    width: 200px;
+    height: 35px;
+    border: #000 solid 2px;
+    border-radius: 10px;
+    outline: none;
+    text-align-last:center;
+}
+
+.space-right {
+    margin-right: 20px;
+}
+
+.space-bottom {
+    margin-bottom: 10px;
+}
+
+.space-top {
+    margin-top: 20px;
+}
+
+.flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.between {
+    display: flex;
+    justify-content: space-between;
+}
+
+.arround {
+    display: flex;
+    justify-content: space-around;
+}

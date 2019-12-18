@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="style.css">
+        <!-- JS -->
+        <script type="text/javascript" src="js/script.js"></script>
+        <title>Projet JS</title>
+    </head>
+    <body>
+        <fieldset  class="space-top">
+            <legend>Formulaire JS</legend>
+            <form method="POST" id="inscription">
+                <p id="error" style="color:#990000;height:30px;text-align: center;"></p>
+                <div class="arround">
+                    <div>
+                        <div>
+                            <div class="flex">
+                                <label class="label-input">Pseudo</label>
+                            </div>
+                            <div class="flex space-bottom">
+                                <input id="pseudo" class="border" type="text" name="pseudo">
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex">
+                                <label class="label-input">Nom</label class="label-input">
+                            </div>
+                            <div class="flex space-bottom">
+                                <input id="nom" class="border" type="text" name="nom">
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex">
+                                <label class="label-input">Prenom</label class="label-input">
+                            </div>
+                            <div class="flex space-bottom">
+                                <input id="prenom" class="border" type="text" name="prenom">
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex">
+                                <label class="label-input">Date de naissance</label>
+                            </div>
+                            <div class="flex space-bottom">
+                                <input id="date" class="border" type="date" name="date">
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <div class="flex">
+                                <label class="label-input">E-mail</label class="label-input">
+                            </div>
+                            <div class="flex space-bottom">
+                            <input id="mail" class="border" type="email" name="mail">
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex">
+                                <label class="label-input">Mot de passe</label>
+                            </div>
+                            <div class="flex space-bottom">
+                                <input  id="mdp" class="border" type="password" name="mdp">
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex">
+                                <label class="label-input">Confirmer mot de passe</label>
+                            </div>
+                            <div class="flex space-bottom">
+                                <input  id="mdp2" class="border" type="password" name="mdp2">
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex">
+                                <label class="label-input">Sexe</label>
+                            </div>
+                            <div class="flex space-bottom">
+                                <select name="sexe" id="sexe">
+                                    <option value="">Sexe</option>
+                                    <option value="homme">Homme</option>
+                                    <option value="femme">Femme</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div class="arround">
+                <div class="flex">
+                    <div>
+                        <div class="flex">
+                            <label class="label-input">Avez-vous plus de 18ans?</label>
+                        </div>
+                        <div class="flex space-bottom">
+                            <select name="age" id="age">
+                                <option value="non">Non</option>
+                                <option value="oui">Oui</option>
+                            </select>
+                        </div>
+                        <div class="flex space-top">
+                            <input type="submit" class="submit" name="submit" value="Inscription">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </form>
+        </fieldset>
+        <script>
+        document.getElementById("inscription").addEventListener("submit", function(e) {
+            e.preventDefault();
+        var error;
+        var pseudo = document.getElementById("pseudo");
+        var nom = document.getElementById("nom");
+        var prenom = document.getElementById("prenom");
+        var date = document.getElementById("date");
+        var mail = document.getElementById("mail");
+        var mdp = document.getElementById("mdp");
+        var mdp2 = document.getElementById("mdp2");
+        var sexe = document.getElementById("sexe")
+        var age = document.getElementById("age");
+
+        if (age.value === "non") {
+            error= "Vous n'êtes pas majeur";
+        }
+        else{
+            
+        }
+        if (!sexe.value) {
+            error = "Veuillez préciser votre sexe";
+        }
+        if (mdp.value != mdp2.value){
+            error = "Les mots de passes ne correspondent pas";
+        }
+        if (!mdp2.value) {
+            error = "Veuillez confirmer le mot de passe";
+        }
+        if (!mdp.value) {
+            error = "Veuillez renseigner un mot de passe";
+        }
+        if (!mail.value) {
+            error = "Veuillez renseigner un mail";
+        }
+        if (!date.value) {
+            error = "Veuillez renseigner une date de naissance";
+            }
+        if (!prenom.value) {
+            error = "Veuillez renseigner un prenom";
+        }
+        if (!nom.value) {
+            error = "Veuillez renseigner un nom";
+        }
+        if (!pseudo.value) {
+            error = "Veuillez renseigner un pseudo";
+        }
+        if (pseudo.value==="root" || pseudo.value==="admin" || pseudo.value==="dieu"){
+            error= "Nom deja pris";
+        }
+        if (mail.value==="root@paca.happy-dev.fr" || mail.value==="admin@paca.happy-dev.fr" || mail.value==="dieu@paca.happy-dev.fr"){
+            error= "E-mail deja utilisé";
+        }
+        if (date.value > "2001-12-20" ){
+            erreur= "Vous n'avez pas 18 ans";
+        }
+        if (error) {
+              e.preventDefault();
+              document.getElementById("error").innerHTML = error;
+        }
+        else{
+            alert("Formulaire envoyé !"); 
+        }         
+        });
+            </script>
+    </body>
+</html>
+
